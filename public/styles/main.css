@@ -162,7 +162,7 @@ ol {
 	padding: 30px 20px 20px;
 }
 
-.posts__heading {
+.section__heading {
 	padding-bottom: 25px;
 	border-bottom: 2px solid #808080;
 }
@@ -219,11 +219,6 @@ ol {
 .add-post {
 	padding-top: 25px;
 	position: relative;
-}
-
-.add-post__title {
-	padding-bottom: 25px;
-	border-bottom: 2px solid #808080;
 }
 
 .add-post__form {
