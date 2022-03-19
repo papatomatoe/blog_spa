@@ -7,6 +7,8 @@ import PostList from "./components/PostList";
 import Section from "./components/Section";
 import AddPostForm from "./components/AddPostForm";
 
+import "./styles/main.css";
+
 const App = () => {
 	return (
 		<>
