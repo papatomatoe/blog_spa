@@ -19,7 +19,7 @@ const AddPostForm = () => {
 	};
 
 	return (
-		<form className={styles.addPost__form} onSubmit={submitHandler}>
+		<form className={styles.form} onSubmit={submitHandler}>
 			<FormInput
 				type="input"
 				title="Post Title"
@@ -37,7 +37,7 @@ const AddPostForm = () => {
 			/>
 
 			<button
-				className={styles.addPost__button}
+				className={styles.button}
 				type="submit"
 				disabled={!title || !content}
 			>
