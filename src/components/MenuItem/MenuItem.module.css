@@ -1,0 +1,18 @@
+.header__link {
+	color: #fff;
+	text-decoration: underline;
+}
+.header__link:not([href]) {
+	color: #fff;
+	text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+	.header__item {
+		margin-left: 40px;
+	}
+
+	.header__item:first-of-type {
+		margin: 0;
+	}
+}

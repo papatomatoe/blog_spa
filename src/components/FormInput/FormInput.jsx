@@ -1,12 +1,14 @@
 import React from "react";
 
+import styles from "./FormInput.module.css";
+
 const FormInput = (props) => {
 	const getField = (type, placeholder, value, handler) => {
 		switch (type) {
 			case "input":
 				return (
 					<input
-						className="add-post__input"
+						className={styles.addPost__input}
 						type="text"
 						name="postTitle"
 						placeholder={placeholder}
@@ -17,7 +19,7 @@ const FormInput = (props) => {
 			case "textarea":
 				return (
 					<textarea
-						className="add-post__content"
+						className={styles.addPost__content}
 						name="postContent"
 						placeholder={placeholder}
 						value={value}
@@ -28,8 +30,8 @@ const FormInput = (props) => {
 	};
 
 	return (
-		<label className="add-post__field">
-			<span className="add-post__label">{props.title}: </span>
+		<label className={styles.addPost__field}>
+			<span className={styles.addPost__label}>{props.title}: </span>
 			{getField(props.type, props.placeholder, props.value, props.handler)}
 		</label>
 	);

@@ -16,9 +16,34 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.css$/i,
-				use: ["style-loader", "css-loader"],
+				test: /\.(c|sa)ss$/i,
+				use: [
+					"style-loader",
+					{
+						loader: "css-loader",
+						options: {
+							modules: {
+								auto: true,
+								mode: "pure",
+								localIdentName: "[name]__[local]--[hash:base64:8]",
+							},
+						},
+					},
+					{
+						loader: "postcss-loader",
+						options: {
+							postcssOptions: {
+								plugins: ["autoprefixer"],
+							},
+						},
+					},
+					"sass-loader",
+				],
 				exclude: /node_modules/,
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: "asset/resource",
 			},
 		],
 	},

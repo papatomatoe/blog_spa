@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import cn from "classnames";
 import MenuItem from "../MenuItem";
 
+import styles from "./Header.module.css";
+
 const MENU_LINKS = [
 	{ id: "1", title: "about", link: "/about" },
 	{ id: "2", title: "posts", link: "posts" },
@@ -12,18 +14,22 @@ const Header = () => {
 	const [isActive, setIsActive] = useState(false);
 
 	return (
-		<header className="header">
-			<nav className="header__nav">
-				<a className="header__logo" href="#">
+		<header className={styles.header}>
+			<nav className={styles.header__nav}>
+				<a className={styles.header__logo} href="#">
 					Blog
 				</a>
 				<button
-					className={cn("header__button", { "header__menu--active": isActive })}
+					className={cn(styles.header__button, {
+						[styles.header__button__active]: isActive,
+					})}
 					aria-label="open menu"
 					onClick={() => setIsActive((prev) => !prev)}
 				/>
 				<ul
-					className={cn("header__menu", { "header__menu--active": isActive })}
+					className={cn(styles.header__menu, {
+						[styles.header__menu__active]: isActive,
+					})}
 				>
 					{MENU_LINKS.map(({ id, link, title }) => (
 						<MenuItem key={id} title={title} link={link} />
