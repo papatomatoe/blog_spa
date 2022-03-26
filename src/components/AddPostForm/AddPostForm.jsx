@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FormInput from "../FormInput";
 
+import styles from "./AddPostForm.module.css";
+
 const AddPostForm = () => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
@@ -17,7 +19,7 @@ const AddPostForm = () => {
 	};
 
 	return (
-		<form className="add-post__form" onSubmit={submitHandler}>
+		<form className={styles.form} onSubmit={submitHandler}>
 			<FormInput
 				type="input"
 				title="Post Title"
@@ -35,7 +37,7 @@ const AddPostForm = () => {
 			/>
 
 			<button
-				className="add-post__button"
+				className={styles.button}
 				type="submit"
 				disabled={!title || !content}
 			>

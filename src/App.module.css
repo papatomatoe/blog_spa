@@ -1,0 +1,10 @@
+.addPost {
+	padding-top: 25px;
+	position: relative;
+}
+
+@media (min-width: 1000px) {
+	.addPost {
+		padding-top: 120px;
+	}
+}
