@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAppContext } from "../../context";
 import cn from "classnames";
 import MenuItem from "../MenuItem";
 
@@ -10,8 +11,10 @@ const MENU_LINKS = [
 	{ id: "3", title: "contacts", link: "contacts" },
 ];
 
-const Header = () => {
+const Header = (props) => {
 	const [isActive, setIsActive] = useState(false);
+
+	const { contextTitle } = useAppContext();
 
 	return (
 		<header className={styles.header}>
@@ -32,7 +35,7 @@ const Header = () => {
 					})}
 				>
 					{MENU_LINKS.map(({ id, link, title }) => (
-						<MenuItem key={id} title={title} link={link} />
+						<MenuItem key={id} title={title} link={link} menuT={contextTitle} />
 					))}
 				</ul>
 			</nav>

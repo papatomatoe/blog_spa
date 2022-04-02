@@ -3,6 +3,7 @@ import styles from "./PostList.module.css";
 
 import mob from "../../images/mob.jpg";
 import desk from "../../images/desk.jpg";
+import { useAppContext } from "../../context";
 
 const POSTS = [
 	{
@@ -31,11 +32,12 @@ const POSTS = [
 ];
 
 const PostList = () => {
+	const { contextTitle } = useAppContext();
 	return (
 		<ul className={styles.posts__list}>
 			{POSTS.map(({ id, title, content, date, image }) => (
 				<li key={id} className={styles.posts__item}>
-					<h3 className={styles.posts__title}>{title}</h3>
+					<h3 className={styles.posts__title}>{contextTitle || title}</h3>
 					<div className={styles.posts__wrapper}>
 						<picture>
 							<source media="(min-width: 768px)" srcSet={image || desk} />
