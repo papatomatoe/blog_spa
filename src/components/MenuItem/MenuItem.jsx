@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./MenuItem.module.css";
-const MenuItem = (props) => {
+import { Link } from "react-router-dom";
+const MenuItem = ({ link, title }) => {
 	return (
 		<li className={styles.header__item}>
-			<a className={styles.header__link} href={props.link}>
-				{props.title}
-			</a>
+			<Link className={styles.header__link} to={link}>
+				{title}
+			</Link>
 		</li>
 	);
 };

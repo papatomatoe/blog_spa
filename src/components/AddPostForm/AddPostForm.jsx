@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useAppContext } from "../../context";
 import FormInput from "../FormInput";
 
 import styles from "./AddPostForm.module.css";
 
 const AddPostForm = () => {
-	const { changeContextTitle } = useAppContext();
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
@@ -18,7 +16,6 @@ const AddPostForm = () => {
 		console.log("submit event", title, content);
 		setTitle("");
 		setContent("");
-		changeContextTitle(title);
 	};
 
 	return (

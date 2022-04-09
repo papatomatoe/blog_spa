@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./FormInput.module.css";
 
-const FormInput = (props) => {
+const FormInput = ({ title, type, placeholder, value, handler }) => {
 	const getField = (type, placeholder, value, handler) => {
 		switch (type) {
 			case "input":
@@ -31,8 +31,8 @@ const FormInput = (props) => {
 
 	return (
 		<label className={styles.addPost__field}>
-			<span className={styles.addPost__label}>{props.title}: </span>
-			{getField(props.type, props.placeholder, props.value, props.handler)}
+			<span className={styles.addPost__label}>{title}: </span>
+			{getField(type, placeholder, value, handler)}
 		</label>
 	);
 };
