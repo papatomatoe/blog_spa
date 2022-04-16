@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "../Image";
 import styles from "./PostList.module.css";
 
 import mob from "../../images/mob.jpg";
@@ -37,10 +38,12 @@ const PostList = () => {
 				<li key={id} className={styles.posts__item}>
 					<h3 className={styles.posts__title}>{title}</h3>
 					<div className={styles.posts__wrapper}>
-						<picture>
-							<source media="(min-width: 768px)" srcSet={image || desk} />
-							<img className={styles.image} src={image || mob} alt="alt text" />
-						</picture>
+						<Image
+							className={styles.image}
+							alt={title}
+							desktopImage={image || desk}
+							mobileImage={image || mob}
+						/>
 						<p className={styles.posts__content}>{content}</p>
 					</div>
 					<time className={styles.posts__date} dateTime={date}>

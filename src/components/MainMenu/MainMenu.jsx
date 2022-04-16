@@ -2,7 +2,6 @@ import React from "react";
 import cn from "classnames";
 import MenuItem from "../MenuItem";
 import styles from "./MainMenu.module.css";
-import { useAppContext } from "../../context";
 const MainMenu = ({ menuData, isActive }) => {
 	return (
 		<ul

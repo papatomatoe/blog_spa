@@ -1,0 +1,59 @@
+.about {
+	margin-bottom: 40px;
+}
+.image {
+	padding: 40px 0;
+	border-bottom: 2px solid #808080;
+	margin-bottom: 40px;
+}
+
+.text {
+	margin-bottom: 40px;
+}
+
+.skills {
+	margin: 40px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.skills li {
+	padding: 7px 10px;
+	margin-right: 10px;
+}
+
+.html {
+	color: #fff;
+	background-color: #dd4b25;
+}
+.css {
+	color: #fff;
+	background-color: #254bdd;
+}
+.js {
+	color: #000;
+	background-color: #efd81d;
+}
+.react {
+	color: #000;
+	background-color: #5ed3f3;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+	}
+
+	.image {
+		margin: 40px 0;
+		padding: 0;
+		border: none;
+
+		grid-column: 1 / 2;
+	}
+
+	.text {
+		grid-column: 1 / -1;
+	}
+}

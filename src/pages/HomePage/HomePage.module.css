@@ -1,0 +1,48 @@
+.aboutSection {
+	margin-bottom: 50px;
+}
+
+.authorImage {
+	margin: 30px 0;
+}
+
+.textItem {
+	padding-left: 30px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.textItem::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 15px;
+	height: 7px;
+	background-color: tomato;
+}
+
+.toPosts {
+	display: block;
+	margin: 40px auto 30px;
+	max-width: 500px;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: 60px;
+		padding-top: 30px;
+	}
+	.authorImage {
+		margin: 0;
+	}
+
+	.toPosts {
+		display: block;
+		margin: 40px 0 30px auto;
+		width: 300px;
+	}
+}

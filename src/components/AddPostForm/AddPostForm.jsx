@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "../FormInput";
-
+import Button from "../Button";
 import styles from "./AddPostForm.module.css";
 
 const AddPostForm = () => {
@@ -36,13 +36,13 @@ const AddPostForm = () => {
 				handler={contentChangeHandler}
 			/>
 
-			<button
+			<Button
 				className={styles.button}
-				type="submit"
-				disabled={!title || !content}
+				type="button"
+				buttonProps={{ type: "submit", disabled: !title || !content }}
 			>
 				Add post
-			</button>
+			</Button>
 		</form>
 	);
 };

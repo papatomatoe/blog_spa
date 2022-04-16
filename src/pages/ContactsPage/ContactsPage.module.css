@@ -1,0 +1,41 @@
+.list {
+	margin: 40px 0;
+}
+
+.item {
+	margin-bottom: 20px;
+}
+
+.item:last-of-type {
+	margin: 0;
+}
+
+.label {
+	margin-right: 10px;
+}
+
+.value {
+	color: tomato;
+}
+
+.socialList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.icon {
+	fill: #deb887;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: minmax(200px, 250px) 1fr;
+		margin: 40px 0;
+		gap: 50px;
+	}
+	.list {
+		margin: 0;
+	}
+}
