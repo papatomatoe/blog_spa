@@ -62,21 +62,6 @@
 	background-color: #fff;
 }
 
-.header__menu {
-	display: none;
-	position: absolute;
-	width: 100%;
-	background-color: tomato;
-	left: 0;
-	top: calc(100% - 10px);
-	padding: 20px;
-	justify-content: space-around;
-}
-
-.header__menu__active {
-	display: flex;
-}
-
 @media (min-width: 1000px) {
 	.header {
 		padding: 30px 0 40px;
@@ -89,13 +74,5 @@
 
 	.header__button {
 		display: none;
-	}
-
-	.header__menu {
-		display: flex;
-		position: relative;
-		background-color: transparent;
-		width: fit-content;
-		padding: 0;
 	}
 }

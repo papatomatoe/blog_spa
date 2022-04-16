@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import cn from "classnames";
-import MenuItem from "../MenuItem";
 
 import styles from "./Header.module.css";
-
-const MENU_LINKS = [
-	{ id: "1", title: "about", link: "/about" },
-	{ id: "2", title: "posts", link: "posts" },
-	{ id: "3", title: "contacts", link: "contacts" },
-];
+import MainMenu from "../MainMenu/MainMenu";
+import { MENU_LINKS } from "./store";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	const [isActive, setIsActive] = useState(false);
@@ -16,9 +12,9 @@ const Header = () => {
 	return (
 		<header className={styles.header}>
 			<nav className={styles.header__nav}>
-				<a className={styles.header__logo} href="#">
+				<Link className={styles.header__logo} to="/">
 					Blog
-				</a>
+				</Link>
 				<button
 					className={cn(styles.header__button, {
 						[styles.header__button__active]: isActive,
@@ -26,15 +22,7 @@ const Header = () => {
 					aria-label="open menu"
 					onClick={() => setIsActive((prev) => !prev)}
 				/>
-				<ul
-					className={cn(styles.header__menu, {
-						[styles.header__menu__active]: isActive,
-					})}
-				>
-					{MENU_LINKS.map(({ id, link, title }) => (
-						<MenuItem key={id} title={title} link={link} />
-					))}
-				</ul>
+				<MainMenu menuData={MENU_LINKS} isActive={isActive} />
 			</nav>
 		</header>
 	);

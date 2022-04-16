@@ -1,36 +1,26 @@
 import React from "react";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import Main from "./components/Main";
-import PostList from "./components/PostList";
-import Section from "./components/Section";
-import AddPostForm from "./components/AddPostForm";
+import MainLayout from "./layouts/MainLayout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import PostsPage from "./pages/PostsPage";
+import ContactsPage from "./pages/ContactsPage";
 
 import "./styles/main.sass";
 
-import styles from "./App.module.css";
-
 const App = () => {
 	return (
-		<>
-			<Header />
-			<Main title="Posts page">
-				<Section title="Recent posts">
-					{/* <p className="posts__loader">Loading...</p> */}
-					{/* <p className="posts__error">Something went wrong...</p> */}
-					<PostList />
-				</Section>
-				<Section className={styles.addPost} title="Add Post">
-					<AddPostForm />
-					{/* <div className="add-post__error">
-    <p>Something went wrong...</p>
-    <p>Please, try again later.</p>
-  </div> */}
-				</Section>
-			</Main>
-			<Footer />
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<MainLayout />}>
+					<Route index element={<HomePage />} />
+					<Route path="about" element={<AboutPage />} />
+					<Route path="posts" element={<PostsPage />} />
+					<Route path="contacts" element={<ContactsPage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 };
 

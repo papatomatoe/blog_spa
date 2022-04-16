@@ -2,11 +2,11 @@ import React from "react";
 
 import styles from "./Main.module.css";
 
-const Main = (props) => {
+const Main = ({ title, children }) => {
 	return (
 		<main className={styles.content}>
-			<h1 className="visually-hidden">{props.title}</h1>
-			{props.children}
+			<h1 className="visually-hidden">{title}</h1>
+			{children}
 		</main>
 	);
 };
