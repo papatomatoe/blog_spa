@@ -6,13 +6,13 @@
 	margin: 30px 0;
 }
 
-.textItem {
+.textItem p {
 	padding-left: 30px;
 	margin-bottom: 20px;
 	position: relative;
 }
 
-.textItem::after {
+.textItem p::after {
 	position: absolute;
 	content: "";
 	top: 0;

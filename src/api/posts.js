@@ -4,6 +4,7 @@ const getAdaptedPostsData = (data) =>
 	data.map((item) => ({
 		id: item.id,
 		title: item.attributes.title,
+		epigraph: item.attributes.epigraph,
 		content: item.attributes.content,
 		date: item.attributes.publishedAt,
 		desktopImage: item.attributes.desktop.data.attributes.url,

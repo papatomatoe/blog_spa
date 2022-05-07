@@ -1,4 +1,5 @@
 import React from "react";
+import { marked } from "marked";
 import Section from "../../components/Section";
 import PostList from "../../components/PostList";
 import Image from "../../components/Image";
@@ -23,6 +24,10 @@ const HomePage = () => {
 	if (isLoadingAuthorInfo || isLoadingPosts) return <p>Loading...</p>;
 	if (isErrorAuthorInfo || isErrorPosts) return <p>Error</p>;
 
+	const authorDescriptionHTML = marked.parse(authorInfo.description);
+
+	console.log(authorDescriptionHTML);
+
 	return (
 		<>
 			{authorInfo && (
@@ -35,10 +40,10 @@ const HomePage = () => {
 							mobileImage={authorInfo.mobileImage}
 						/>
 						<div className={styles.authorText}>
-							<p
+							<div
 								className={styles.textItem}
 								dangerouslySetInnerHTML={{
-									__html: authorInfo.description,
+									__html: authorDescriptionHTML,
 								}}
 							/>
 						</div>

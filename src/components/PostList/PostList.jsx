@@ -1,4 +1,5 @@
 import React from "react";
+import { marked } from "marked";
 import Image from "../Image";
 import styles from "./PostList.module.css";
 
@@ -9,7 +10,7 @@ const PostList = ({ posts }) => {
 	if (!posts && !posts?.length) return <p>No posts</p>;
 	return (
 		<ul className={styles.posts__list}>
-			{posts.map(({ id, title, content, date, image }) => (
+			{posts.map(({ id, title, epigraph, date, image }) => (
 				<li key={id} className={styles.posts__item}>
 					<h3 className={styles.posts__title}>{title}</h3>
 					<div className={styles.posts__wrapper}>
@@ -19,7 +20,10 @@ const PostList = ({ posts }) => {
 							desktopImage={image || desk}
 							mobileImage={image || mob}
 						/>
-						<p className={styles.posts__content}>{content}</p>
+						<div
+							className={styles.posts__content}
+							dangerouslySetInnerHTML={{ __html: marked.parse(epigraph) }}
+						/>
 					</div>
 					<time className={styles.posts__date} dateTime={date}>
 						{date}
