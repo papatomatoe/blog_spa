@@ -1,45 +1,55 @@
 import React from "react";
+import { marked } from "marked";
 import Section from "../../components/Section";
 import PostList from "../../components/PostList";
 import Image from "../../components/Image";
 import Button from "../../components/Button";
 import styles from "./HomePage.module.css";
-import authorMob from "../../images/author-mob.jpg";
-import authorDesk from "../../images/author-desk.jpg";
+import { useFetchData } from "../../hooks/useFetchData";
+import { getAuthorInfo } from "../../api/authorInfo";
+import { getPosts } from "../../api/posts";
+
 const HomePage = () => {
+	const {
+		data: authorInfo,
+		isLoading: isLoadingAuthorInfo,
+		isError: isErrorAuthorInfo,
+	} = useFetchData(getAuthorInfo);
+	const {
+		data: posts,
+		isLoading: isLoadingPosts,
+		isError: isErrorPosts,
+	} = useFetchData(getPosts);
+
+	if (isLoadingAuthorInfo || isLoadingPosts) return <p>Loading...</p>;
+	if (isErrorAuthorInfo || isErrorPosts) return <p>Error</p>;
+
+	const authorDescriptionHTML = marked.parse(authorInfo.description);
+
 	return (
 		<>
-			<Section className={styles.aboutSection} title="Hello my name is Author">
-				<div className={styles.wrapper}>
-					<Image
-						className={styles.authorImage}
-						alt="Author"
-						desktopImage={authorDesk}
-						mobileImage={authorMob}
-					/>
-					<div className={styles.authorText}>
-						<p className={styles.textItem}>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit aperiam in corporis aspernatur molestias saepe ipsam
-							pariatur maiores, aliquam illum odio distinctio, sunt voluptatibus
-							amet, unde repellat voluptatum dolores dignissimos?
-						</p>
-						<p className={styles.textItem}>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit aperiam in corporis aspernatur molestias saepe ipsam
-							pariatur maiores, aliquam illum odio distinctio, sunt voluptatibus
-							amet, unde repellat voluptatum dolores dignissimos?
-						</p>
-						<p className={styles.textItem}>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit aperiam in corporis aspernatur molestias saepe ipsam
-							pariatur maiores.
-						</p>
+			{authorInfo && (
+				<Section className={styles.aboutSection} title={authorInfo.title}>
+					<div className={styles.wrapper}>
+						<Image
+							className={styles.authorImage}
+							alt="Author"
+							desktopImage={authorInfo.desktopImage}
+							mobileImage={authorInfo.mobileImage}
+						/>
+						<div className={styles.authorText}>
+							<div
+								className={styles.textItem}
+								dangerouslySetInnerHTML={{
+									__html: authorDescriptionHTML,
+								}}
+							/>
+						</div>
 					</div>
-				</div>
-			</Section>
+				</Section>
+			)}
 			<Section title="Posts">
-				<PostList />
+				<PostList posts={posts} />
 				<Button type="link" to="/posts" className={styles.toPosts}>
 					Link
 				</Button>
