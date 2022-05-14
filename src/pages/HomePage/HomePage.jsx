@@ -26,8 +26,6 @@ const HomePage = () => {
 
 	const authorDescriptionHTML = marked.parse(authorInfo.description);
 
-	console.log(authorDescriptionHTML);
-
 	return (
 		<>
 			{authorInfo && (
