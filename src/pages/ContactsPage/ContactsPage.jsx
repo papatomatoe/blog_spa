@@ -2,27 +2,44 @@ import React from "react";
 import Section from "../../components/Section";
 import { VKIcon, TwitterIcon, YoutubeIcon } from "../../components/Icons";
 import styles from "./ContactsPage.module.css";
-
+import { useContacts } from "../../queries/useContacts";
+import { useSocial } from "../../queries/useSocial";
 const SOCIAL = [
 	{ id: 1, title: "vk", link: "/", Icon: VKIcon },
 	{ id: 2, title: "youtube", link: "/", Icon: YoutubeIcon },
 	{ id: 3, title: "twitter", link: "/", Icon: TwitterIcon },
 ];
 const ContactsPage = () => {
+	const {
+		isLoading: isLoadingContacts,
+		isError: isErrorContacts,
+		data: contacts,
+	} = useContacts();
+	const {
+		isLoading: isLoadingSocial,
+		isError: isErrorSocial,
+		data: social,
+	} = useSocial();
+
+	if (isLoadingContacts || isLoadingSocial) return <p>Loading...</p>;
+	if (isErrorContacts || isErrorSocial) return <p>Error</p>;
+
+	console.log(contacts, social);
+
 	return (
 		<Section title="Contacts">
 			<div className={styles.wrapper}>
 				<ul className={styles.list}>
 					<li className={styles.item}>
 						<span className={styles.label}>Phone: </span>
-						<a className={styles.value} href="tel:89995324538434286">
-							89995324538434286
+						<a className={styles.value} href={`tel:${contacts.phone}`}>
+							{contacts.phone}
 						</a>
 					</li>
 					<li className={styles.item}>
 						<span className={styles.label}>Email: </span>
-						<a className={styles.value} href="mailto:net@net.net">
-							net@net.net
+						<a className={styles.value} href={`mailto:${contacts.email}`}>
+							{contacts.email}
 						</a>
 					</li>
 				</ul>

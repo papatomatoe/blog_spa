@@ -5,21 +5,20 @@ import PostList from "../../components/PostList";
 import Image from "../../components/Image";
 import Button from "../../components/Button";
 import styles from "./HomePage.module.css";
-import { useFetchData } from "../../hooks/useFetchData";
-import { getAuthorInfo } from "../../api/authorInfo";
-import { getPosts } from "../../api/posts";
+import { useAuthorInfo } from "../../queries/useAuthorInfo";
+import { usePosts } from "../../queries/usePosts";
 
 const HomePage = () => {
 	const {
-		data: authorInfo,
 		isLoading: isLoadingAuthorInfo,
 		isError: isErrorAuthorInfo,
-	} = useFetchData(getAuthorInfo);
+		data: authorInfo,
+	} = useAuthorInfo();
 	const {
-		data: posts,
 		isLoading: isLoadingPosts,
 		isError: isErrorPosts,
-	} = useFetchData(getPosts);
+		data: posts,
+	} = usePosts();
 
 	if (isLoadingAuthorInfo || isLoadingPosts) return <p>Loading...</p>;
 	if (isErrorAuthorInfo || isErrorPosts) return <p>Error</p>;
