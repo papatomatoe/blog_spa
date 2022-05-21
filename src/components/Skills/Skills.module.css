@@ -1,0 +1,43 @@
+.skills {
+	margin: 40px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.skills li {
+	padding: 7px 10px;
+	margin-right: 10px;
+}
+
+.default {
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #000;
+}
+
+.html {
+	color: #fff;
+	background-color: #dd4b25;
+	border-color: #dd4b25;
+}
+.css {
+	color: #fff;
+	background-color: #254bdd;
+	border-color: #254bdd;
+}
+.javascript {
+	color: #000;
+	background-color: #efd81d;
+	border-color: #efd81d;
+}
+.react {
+	color: #000;
+	background-color: #5ed3f3;
+	border-color: #5ed3f3;
+}
+
+.svelte {
+	color: #fff;
+	background-color: #dd4b25;
+	border-color: #dd4b25;
+}

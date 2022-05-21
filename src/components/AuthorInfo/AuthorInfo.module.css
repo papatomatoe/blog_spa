@@ -1,0 +1,27 @@
+.image {
+	display: block;
+	padding: 40px 0;
+	border-bottom: 2px solid #808080;
+	margin: 0 auto;
+	margin-bottom: 40px;
+}
+
+.description p {
+	margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: 20px;
+	}
+
+	.image {
+		padding: 0;
+		border: none;
+
+		grid-column: 1 / 2;
+	}
+}
