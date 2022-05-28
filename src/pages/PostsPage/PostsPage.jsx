@@ -8,7 +8,7 @@ const PostsPage = () => {
 	if (isLoading) return <p>Loading...</p>;
 	return (
 		<Section title="Recent posts">
-			<PostList posts={posts} />
+			<PostList posts={posts} isMarkFirstPost={true} />
 		</Section>
 	);
 };

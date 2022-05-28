@@ -1,0 +1,7 @@
+/build/**
+/node_modules/**
+/coverage/**
+test.tsx
+jest.setup.ts
+webpack.config.js
+!.eslintrc.js
