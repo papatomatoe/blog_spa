@@ -8,6 +8,13 @@ import desk from "../../images/desk.jpg";
 
 const PostList = ({ posts }) => {
 	if (!posts && !posts?.length) return <p>No posts</p>;
+
+	const renderData = (date) => {
+		const dataObject = new Date(date);
+
+		return new Intl.DateTimeFormat("ru-RU").format(dataObject);
+	};
+
 	return (
 		<ul className={styles.posts__list}>
 			{posts.map(({ id, title, epigraph, date, image }) => (
@@ -26,7 +33,7 @@ const PostList = ({ posts }) => {
 						/>
 					</div>
 					<time className={styles.posts__date} dateTime={date}>
-						{date}
+						{renderData(date)}
 					</time>
 				</li>
 			))}

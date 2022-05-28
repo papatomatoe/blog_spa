@@ -4,6 +4,7 @@ const getAdaptedAuthorInfoData = (data) => {
 	return {
 		title: data.attributes.title,
 		description: data.attributes.description,
+		fullDescription: data.attributes.fullDescription,
 		desktopImage: data.attributes.desktop.data.attributes.url,
 		mobileImage: data.attributes.mobile.data.attributes.url,
 	};
