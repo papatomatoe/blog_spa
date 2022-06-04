@@ -1,8 +1,8 @@
-import { FC, ReactNode } from 'react';
-
+import { FC } from 'react';
+import { MainProps } from './types';
 import styles from './Main.module.css';
 
-const Main: FC<{ title?: string; children: ReactNode }> = ({ title, children }) => {
+const Main: FC<MainProps> = ({ title, children }) => {
   return (
     <main className={styles.content}>
       {title && <h1 className="visually-hidden">{title}</h1>}
