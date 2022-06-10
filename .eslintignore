@@ -5,3 +5,4 @@ test.tsx
 jest.setup.ts
 webpack.config.js
 !.eslintrc.js
+*.d.ts
