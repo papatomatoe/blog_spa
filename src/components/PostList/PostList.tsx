@@ -10,6 +10,7 @@ const PostList: FC<PostListProps> = ({ posts, isMarkFirstPost = false }) => {
       {posts.map(({ id, title, desktopImage, mobileImage, epigraph, date }, idx) => (
         <li key={id} className={styles.posts__item}>
           <PostItem
+            id={id}
             title={title}
             desktopImage={desktopImage}
             mobileImage={mobileImage}

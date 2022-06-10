@@ -14,3 +14,9 @@ export const getPostsForHomePage = (posts: IPost[]) => {
 
 export const searchByTitlePosts = (posts: IPost[], value: string) =>
   sortPostsByDate(posts).filter((el) => el.title.trim().toLowerCase().includes(value.toLowerCase()));
+
+export const getFormattedDate = (date: string) => {
+  const dataObject = new Date(date);
+
+  return new Intl.DateTimeFormat('ru-RU').format(dataObject);
+};

@@ -1,0 +1,42 @@
+.post {
+  padding: 20px 0;
+}
+
+.post__title {
+  margin: 0 0 40px 0;
+  line-height: 1.5;
+}
+
+.post__date {
+  display: block;
+  text-align: right;
+  margin: 20px 0;
+  font-weight: 700;
+  color: gray;
+}
+
+.post__content {
+  padding-top: 20px;
+  border-top: 1px solid gray;
+}
+
+.post__content p {
+  margin-bottom: 40px;
+}
+
+.post__content img {
+  display: block;
+  margin: 0 auto;
+}
+
+.post__content a {
+  color: tomato;
+  text-decoration: underline;
+}
+
+.post__back {
+  display: block;
+  width: 150px;
+  text-align: center;
+  margin: 0 0 0 auto;
+}

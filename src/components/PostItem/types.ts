@@ -1,5 +1,5 @@
 import { IPost } from '../../types/post';
 
-export interface PostItemProps extends Omit<IPost, 'id' | 'content'> {
+export interface PostItemProps extends Omit<IPost, 'content'> {
   isMarked?: boolean;
 }

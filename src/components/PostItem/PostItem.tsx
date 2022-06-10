@@ -4,13 +4,9 @@ import { marked } from 'marked';
 import Image from '../Image';
 import styles from './PostItem.module.css';
 import { PostItemProps } from './types';
-const PostItem: FC<PostItemProps> = ({ title, desktopImage, mobileImage, epigraph, date, isMarked = false }) => {
-  const renderDate = (date: string) => {
-    const dataObject = new Date(date);
-
-    return new Intl.DateTimeFormat('ru-RU').format(dataObject);
-  };
-
+import { getFormattedDate } from '../../utils/helpers';
+import Button from '../Button';
+const PostItem: FC<PostItemProps> = ({ id, title, desktopImage, mobileImage, epigraph, date, isMarked = false }) => {
   return (
     <>
       <h3
@@ -24,9 +20,14 @@ const PostItem: FC<PostItemProps> = ({ title, desktopImage, mobileImage, epigrap
         <Image className={styles.image} alt={title} desktopImage={desktopImage} mobileImage={mobileImage} />
         <div className={styles.posts__content} dangerouslySetInnerHTML={{ __html: marked.parse(epigraph) }} />
       </div>
-      <time className={styles.posts__date} dateTime={date}>
-        {renderDate(date)}
-      </time>
+      <div className={styles.posts__bottom}>
+        <time className={styles.posts__date} dateTime={date}>
+          {getFormattedDate(date)}
+        </time>
+        <Button className={styles.posts__read} type="link" href={`/posts/${id}`}>
+          Read Post
+        </Button>
+      </div>
     </>
   );
 };

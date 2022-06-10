@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PostsPage from './pages/PostsPage';
+import PostPage from './pages/PostPage';
 import ContactsPage from './pages/ContactsPage';
 import Error404 from './pages/Error404';
 
@@ -16,6 +17,8 @@ const App: FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
+          <Route path="*" element={<Error404 />} />
+
           <Route
             index
             element={
@@ -41,6 +44,14 @@ const App: FC = () => {
             }
           />
           <Route
+            path="posts/:postId"
+            element={
+              <ErrorBoundary>
+                <PostPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
             path="contacts"
             element={
               <ErrorBoundary>
@@ -48,7 +59,6 @@ const App: FC = () => {
               </ErrorBoundary>
             }
           />
-          <Route path="*" element={<Error404 />} />
         </Route>
       </Routes>
     </BrowserRouter>
