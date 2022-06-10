@@ -5,6 +5,9 @@ import { useSkills } from '../../queries/useSkills';
 import { useAuthorInfo } from '../../queries/useAuthorInfo';
 import AuthorInfo from '../../components/AuthorInfo';
 import Skills from '../../components/Skills';
+
+import ErrorBoundary from '../../components/ErrorBoundary';
+
 const AboutPage: FC = () => {
   const { data: skills, isError: isSkillsError, isLoading: isSkillsLoading } = useSkills();
 

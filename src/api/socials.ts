@@ -12,6 +12,9 @@ const getAdaptedSocials = (response: any): ISocial[] => {
 
 export const getSocials = async (): Promise<ISocial[]> => {
   const response = await fetch(`${API_URL}/socials?populate=*`);
+  if (!response.ok) {
+    throw new Error('Something went wrong');
+  }
   const data = await response.json();
   return data.data ? getAdaptedSocials(data.data) : data;
 };

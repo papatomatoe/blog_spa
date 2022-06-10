@@ -7,7 +7,7 @@ import styles from './HomePage.module.css';
 import { useAuthorInfo } from '../../queries/useAuthorInfo';
 import { usePosts } from '../../queries/usePosts';
 import { getPostsForHomePage } from '../../utils/helpers';
-
+import ErrorBoundary from '../../components/ErrorBoundary';
 const HomePage: FC = () => {
   const { isLoading: isLoadingAuthorInfo, isError: isErrorAuthorInfo, data: authorInfo } = useAuthorInfo();
   const { isLoading: isLoadingPosts, isError: isErrorPosts, data: posts } = usePosts();

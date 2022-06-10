@@ -14,6 +14,9 @@ const getAdaptedPostsData = (data: any): IPost[] =>
 
 export const getPosts = async (): Promise<IPost[]> => {
   const response = await fetch(`${API_URL}/posts?populate=*`);
+  if (!response.ok) {
+    throw new Error('Something went wrong');
+  }
   const data = await response.json();
 
   const posts = data.data ? getAdaptedPostsData(data.data) : data;

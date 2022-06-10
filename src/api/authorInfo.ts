@@ -13,6 +13,11 @@ const getAdaptedAuthorInfoData = (data: any): IAuthor => {
 
 export const getAuthorInfo = async (): Promise<IAuthor> => {
   const response = await fetch(`${API_URL}/author?populate=*`);
+
+  if (!response.ok) {
+    throw new Error('Something went wrong');
+  }
+
   const data = await response.json();
 
   const authorInfo = data.data ? getAdaptedAuthorInfoData(data.data) : data;

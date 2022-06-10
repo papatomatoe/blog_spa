@@ -6,6 +6,9 @@ const getAdaptedSkills = (response: any): string[] => {
 
 export const getSkills = async (): Promise<string[]> => {
   const response = await fetch(`${API_URL}/skills`);
+  if (!response.ok) {
+    throw new Error('Something went wrong');
+  }
   const data = await response.json();
   return data.data ? getAdaptedSkills(data.data) : data;
 };

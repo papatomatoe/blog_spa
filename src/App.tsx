@@ -6,18 +6,49 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PostsPage from './pages/PostsPage';
 import ContactsPage from './pages/ContactsPage';
+import Error404 from './pages/Error404';
 
 import './styles/main.sass';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="posts" element={<PostsPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
+          <Route
+            index
+            element={
+              <ErrorBoundary>
+                <HomePage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <ErrorBoundary>
+                <AboutPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="posts"
+            element={
+              <ErrorBoundary>
+                <PostsPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <ErrorBoundary>
+                <ContactsPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route path="*" element={<Error404 />} />
         </Route>
       </Routes>
     </BrowserRouter>

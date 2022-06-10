@@ -8,6 +8,9 @@ const getAdaptedContacts = (data: any): IContacts => ({
 
 export const getContacts = async (): Promise<IContacts> => {
   const response = await fetch(`${API_URL}/contact?populate=*`);
+  if (!response.ok) {
+    throw new Error('Something went wrong');
+  }
   const data = await response.json();
   return getAdaptedContacts(data);
 };
