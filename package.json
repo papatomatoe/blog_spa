@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
-  "homepage": "https://papatomatoe.github.io/blog_spa",
+  "homepage": "https://papatomatoe.github.io",
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
