@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
+  "homepage": "https://papatomatoe.github.io/blog_spa",
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
@@ -13,7 +14,9 @@
     "build": "webpack --node-env=production",
     "analyze": "webpack --analyze --mode=production",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "classnames": "2.3.1",
@@ -40,6 +43,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
+    "gh-pages": "4.0.0",
     "html-webpack-plugin": "5.5.0",
     "imagemin-webpack-plugin": "2.4.2",
     "mini-css-extract-plugin": "2.6.0",
