@@ -32,7 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
-        API_URL: ${{ secrets.API_URL }}
+        env:
+          API_URL: ${{ secrets.API_URL }}
 
       - name: Deploy
         run: |
