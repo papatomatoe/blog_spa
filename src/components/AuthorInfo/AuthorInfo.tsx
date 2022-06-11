@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { marked } from 'marked';
-import Image from '../Image';
+import Image from 'components/Image';
 import styles from './AuthorInfo.module.css';
 import { AuthorInfoProps } from './types';
 

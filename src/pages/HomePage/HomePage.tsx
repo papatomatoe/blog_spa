@@ -1,13 +1,12 @@
 import { FC } from 'react';
-import Section from '../../components/Section';
-import PostList from '../../components/PostList';
-import Button from '../../components/Button';
-import AuthorInfo from '../../components/AuthorInfo';
+import Section from 'components/Section';
+import PostList from 'components/PostList';
+import Button from 'components/Button';
+import AuthorInfo from 'components/AuthorInfo';
 import styles from './HomePage.module.css';
-import { useAuthorInfo } from '../../queries/useAuthorInfo';
-import { usePosts } from '../../queries/usePosts';
-import { getPostsForHomePage } from '../../utils/helpers';
-import ErrorBoundary from '../../components/ErrorBoundary';
+import { useAuthorInfo } from 'queries/useAuthorInfo';
+import { usePosts } from 'queries/usePosts';
+import { getPostsForHomePage } from 'utils/helpers';
 const HomePage: FC = () => {
   const { isLoading: isLoadingAuthorInfo, isError: isErrorAuthorInfo, data: authorInfo } = useAuthorInfo();
   const { isLoading: isLoadingPosts, isError: isErrorPosts, data: posts } = usePosts();

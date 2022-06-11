@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { usePost } from '../../queries/usePost';
-import Image from '../../components/Image';
-import { getFormattedDate } from '../../utils/helpers';
+import { usePost } from 'queries/usePost';
+import Image from 'components/Image';
+import { getFormattedDate } from 'utils/helpers';
 import { marked } from 'marked';
 import styles from './PostPage.module.css';
-import Button from '../../components/Button';
+import Button from 'components/Button';
 const PostPage: FC = () => {
   const params = useParams();
 

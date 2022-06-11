@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import Section from '../../components/Section';
+import Section from 'components/Section';
 import styles from './ContactsPage.module.css';
-import { useContacts } from '../../queries/useContacts';
-import { useSocial } from '../../queries/useSocial';
-import Contact from '../../components/Contact';
+import { useContacts } from 'queries/useContacts';
+import { useSocial } from 'queries/useSocial';
+import Contact from 'components/Contact';
 
 const ContactsPage: FC = () => {
   const { isLoading: isLoadingContacts, isError: isErrorContacts, data: contacts } = useContacts();

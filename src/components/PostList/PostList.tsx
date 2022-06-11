@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PostItem from '../PostItem';
+import PostItem from 'components/PostItem';
 import styles from './PostList.module.css';
 import { PostListProps } from './types';
 

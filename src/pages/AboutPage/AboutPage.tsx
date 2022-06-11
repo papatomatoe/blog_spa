@@ -1,12 +1,10 @@
 import { FC } from 'react';
-import Section from '../../components/Section';
+import Section from 'components/Section';
 import styles from './AboutPage.module.css';
-import { useSkills } from '../../queries/useSkills';
-import { useAuthorInfo } from '../../queries/useAuthorInfo';
-import AuthorInfo from '../../components/AuthorInfo';
-import Skills from '../../components/Skills';
-
-import ErrorBoundary from '../../components/ErrorBoundary';
+import { useSkills } from 'queries/useSkills';
+import { useAuthorInfo } from 'queries/useAuthorInfo';
+import AuthorInfo from 'components/AuthorInfo';
+import Skills from 'components/Skills';
 
 const AboutPage: FC = () => {
   const { data: skills, isError: isSkillsError, isLoading: isSkillsLoading } = useSkills();

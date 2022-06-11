@@ -1,16 +1,16 @@
 import { FC } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import MainLayout from './layouts/MainLayout';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import PostsPage from './pages/PostsPage';
-import PostPage from './pages/PostPage';
-import ContactsPage from './pages/ContactsPage';
-import Error404 from './pages/Error404';
+import MainLayout from 'layouts/MainLayout';
+import HomePage from 'pages/HomePage';
+import AboutPage from 'pages/AboutPage';
+import PostsPage from 'pages/PostsPage';
+import PostPage from 'pages/PostPage';
+import ContactsPage from 'pages/ContactsPage';
+import Error404 from 'pages/Error404';
 
-import './styles/main.sass';
-import ErrorBoundary from './components/ErrorBoundary';
+import 'styles/main.sass';
+import ErrorBoundary from 'components/ErrorBoundary';
 
 const App: FC = () => {
   return (

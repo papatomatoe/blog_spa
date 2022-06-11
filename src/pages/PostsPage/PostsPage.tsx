@@ -1,9 +1,9 @@
 import { FC, useState, ChangeEvent } from 'react';
-import PostList from '../../components/PostList';
-import Section from '../../components/Section';
-import { usePosts } from '../../queries/usePosts';
+import PostList from 'components/PostList';
+import Section from 'components/Section';
+import { usePosts } from 'queries/usePosts';
 import styles from './PostsPage.module.css';
-import { searchByTitlePosts } from '../../utils/helpers';
+import { searchByTitlePosts } from 'utils/helpers';
 const PostsPage: FC = () => {
   const [searchValue, setSearchValue] = useState('');
   const { data: posts, isError, isLoading } = usePosts();

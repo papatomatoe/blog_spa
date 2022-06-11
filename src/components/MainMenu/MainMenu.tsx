@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import cn from 'classnames';
-import MenuItem from '../MenuItem';
+import MenuItem from 'components/MenuItem';
 import styles from './MainMenu.module.css';
 import { MainMenuProps } from './types';
 const MainMenu: FC<MainMenuProps> = ({ menuData, isActive }) => {

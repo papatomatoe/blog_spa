@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import cn from 'classnames';
 import { marked } from 'marked';
-import Image from '../Image';
+import Image from 'components/Image';
 import styles from './PostItem.module.css';
 import { PostItemProps } from './types';
-import { getFormattedDate } from '../../utils/helpers';
+import { getFormattedDate } from 'utils/helpers';
 import Button from '../Button';
 const PostItem: FC<PostItemProps> = ({ id, title, desktopImage, mobileImage, epigraph, date, isMarked = false }) => {
   return (

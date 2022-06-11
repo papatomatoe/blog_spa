@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import cn from 'classnames';
 
 import styles from './Header.module.css';
-import MainMenu from '../MainMenu/MainMenu';
+import MainMenu from 'components/MainMenu';
 import { MENU_LINKS } from './store';
 import { Link } from 'react-router-dom';
 

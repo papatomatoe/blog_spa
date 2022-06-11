@@ -1,5 +1,5 @@
 import { IAuthor } from 'types/author';
-import { API_URL } from '../constants/api';
+import { API_URL } from 'constants/api';
 
 const getAdaptedAuthorInfoData = (data: any): IAuthor => {
   return {
